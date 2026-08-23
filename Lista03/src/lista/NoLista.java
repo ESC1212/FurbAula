@@ -2,11 +2,13 @@ package lista;
 
 public class NoLista<T> {
 	
-	public NoLista() {
-		
-	}
-	
 	private T info;
+	private NoLista<T> proximo;
+	
+	public NoLista(T info) {
+		this.info = info;
+		this.proximo = null;
+	}
 	
 	public T getInfo() {
 		return info;
@@ -17,10 +19,11 @@ public class NoLista<T> {
 	}
 	
 	public NoLista<T> getProximo(){
-		return null;
+		return proximo;
 	}
 	
 	public void setProximo(NoLista<T> proximo) {
+		this.proximo = proximo;
 	}
 	
 }
