@@ -1,7 +1,5 @@
 package listaDupla;
 
-import java.security.Principal;
-
 public class ListaDupla<T> {
 	
 	private NoListaDupla<T> primeiro;
@@ -18,8 +16,12 @@ public class ListaDupla<T> {
 	
 	public void inserir(T info) {
 		NoListaDupla<T> novaInfo = new NoListaDupla<>(info);
+		
+		if (primeiro != null) {			
+			primeiro.setAnterior(novaInfo);
+		}
+		
 		novaInfo.setProximo(primeiro);
-		primeiro.setAnterior(novaInfo);
 		primeiro = novaInfo;
 	}
 	
@@ -49,9 +51,13 @@ public class ListaDupla<T> {
         }
 
         if (p != null) {
-            if (p == primeiro) {
+        	if (p == primeiro && p.getProximo() == null ) {
+        		primeiro = null;
+        	} else if (p == primeiro) {
             	primeiro = p.getProximo();
-            	p.setAnterior(null);
+            	primeiro.setAnterior(null);
+            } else if (p.getProximo() == null){
+            	p.getAnterior().setProximo(null);
             } else {
             	p.getAnterior().setProximo(p.getProximo());
             	p.getProximo().setAnterior(p.getAnterior());
@@ -60,16 +66,13 @@ public class ListaDupla<T> {
     }
     
     public void exibirOrdemInversa() {
-    	NoListaDupla<T> ultimo = null;
     	NoListaDupla<T> p = primeiro;
 
     	if (p != null) {
-    		if (p.getProximo() == null)
-    			System.out.println(p.getInfo());
     		while (p.getProximo() != null) {
     			p = p.getProximo();
         	}
-    		while (p.getAnterior() != null) {
+    		while (p != null) {
     			System.out.println(p.getInfo());
     			p = p.getAnterior();
     		}
@@ -78,10 +81,13 @@ public class ListaDupla<T> {
     
     public void liberar() {
     	NoListaDupla<T> p = primeiro;
+    	NoListaDupla<T> proximo;
     	
     	while (p != null) {
+    		proximo = p.getProximo();
     		p.setAnterior(null);
-    		p = p.getProximo();
+    		p.setProximo(null);
+    		p = proximo;
     	}
     	
     	primeiro = null;
