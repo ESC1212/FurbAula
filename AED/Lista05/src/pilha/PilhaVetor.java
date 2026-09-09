@@ -8,12 +8,14 @@ public abstract class PilhaVetor<T> implements Pilha<T> {
 
 	public PilhaVetor(int limite) {
 		this.limite = limite;
-		
 		tamanho = 0;
 	}
 
 	public void push(T info) {
-		System.out.println("Test");
+		if (tamanho >= limite)
+			throw new RuntimeException("Pilha cheia.");
+		tamanho++;
+		
 	}
 
 	public T pop() {
