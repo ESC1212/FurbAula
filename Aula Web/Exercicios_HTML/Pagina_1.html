@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício HTML - parte 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        Página principal
+    </header>
+
+    <nav>
+        <ul>
+            <li>Item 1</li>
+            <li><a href="pagina_2.html">Item 2</a></li>
+            <li>Item 3</li>
+        </ul>
+    </nav>
+
+    <br>
+
+    <audio controls>
+        <source src="sample-3s.mp3" type="audio/mpeg">
+    </audio>
+
+    <br><br>
+
+    <table>
+        <!-- Linha 1: 4 células normais, 1 célula mesclando 3 linhas à direita -->
+        <tr>
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
+            <td rowspan="3">a</td>
+        </tr>
+        <!-- Linha 2: 1 célula mesclando 2 linhas à esquerda, 1 célula mesclando 3 colunas no meio -->
+        <tr>
+            <td rowspan="2">a</td>
+            <td colspan="3">a</td>
+        </tr>
+        <!-- Linha 3: 3 células normais no meio -->
+        <tr>
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
+        </tr>
+        <!-- Linha 4: 1 célula mesclando 2 linhas à esquerda, 1 célula mesclando 4 colunas à direita -->
+        <tr>
+            <td rowspan="2"></td>
+            <td colspan="4"></td>
+        </tr>
+        <!-- Linha 5: 4 células normais à direita -->
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+</html>

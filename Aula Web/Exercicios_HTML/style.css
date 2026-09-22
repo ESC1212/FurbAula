@@ -1,0 +1,53 @@
+/* Estilização do <header> para a Parte 1 e Parte 2 */
+header {
+    width: 100%;
+    font-size: larger;
+    background-color: lightblue;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Deixa os itens da lista do menu lado a lado (Parte 1) */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Estilização do formulário (Parte 2) */
+form {
+    background-color: lightgray;
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 20px;
+    width: 300px;
+}
+
+/* Estilização dos botões do formulário (Parte 2) */
+input[type="submit"], input[type="reset"] {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td {
+    background-size: 150px;
+    border: 1cm;
+    border-color: chocolate !important;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+    padding: 20px;
+}
