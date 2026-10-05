@@ -3,18 +3,16 @@ package arvoreNAria;
 public class NoArvore<T> {
 	
 	private T info;
-	private NoArvore primeiro;
-	private NoArvore proximo;
+	private NoArvore<T> primeiro;
+	private NoArvore<T> proximo;
 	
 	public NoArvore(T info) {
 		this.info = info;
 	}
 	
-	public void inserirFilho(NoArvore sa) {
-		if (primeiro == null) {
-			sa.setProximo(primeiro);
-			setPrimeiro(sa);
-		}
+	public void inserirFilho(NoArvore<T> sa) {
+		sa.setProximo(primeiro);
+		setPrimeiro(sa);
 	}
 	
 	public void setInfo(T info) {
@@ -25,19 +23,19 @@ public class NoArvore<T> {
 		return this.info;
 	}
 	
-	public NoArvore getPrimeiro() {
+	public NoArvore<T> getPrimeiro() {
 		return this.primeiro;
 	}
 	
-	public void setPrimeiro(NoArvore no) {
+	public void setPrimeiro(NoArvore<T> no) {
 		this.primeiro = no;
 	}
 	
-	public NoArvore getProximo() {
+	public NoArvore<T> getProximo() {
 		return this.proximo;
 	}
 	
-	public void setProximo(NoArvore no) {
+	public void setProximo(NoArvore<T> no) {
 		this.proximo = no;
 	}
 
