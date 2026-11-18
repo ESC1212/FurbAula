@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>P-3</title>
+    <style>
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table id="tabela">
+        <tr><td>A1</td><td>B1</td><td>C1</td></tr>
+        <tr><td>A2</td><td>B2</td><td>C2</td></tr>
+        <tr><td>A3</td><td>B3</td><td>C3</td></tr>
+    </table><br>
+    
+    <button onclick="adicionarLinha()">Adicionar Linha</button>
+
+    <script>
+        function adicionarLinha() {
+            let tabela = document.getElementById('tabela');
+            let novaLinha = tabela.insertRow();
+            novaLinha.insertCell(0).innerText = "X";
+            novaLinha.insertCell(1).innerText = "Y";
+            novaLinha.insertCell(2).innerText = "Z";
+        }
+    </script>
+</body>
+</html>

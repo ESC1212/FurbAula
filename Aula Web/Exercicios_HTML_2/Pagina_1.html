@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>P-1</title>
+</head>
+<body>
+    <input type="number" id="num1">
+    <input type="number" id="num2"><br><br>
+    
+    <button onclick="somar()">Somar</button>
+    <div id="resultado-soma"></div><br>
+    
+    <button onclick="comparar()">Comparar</button>
+    <div id="resultado-comparacao"></div>
+
+    <script>
+        function somar() {
+            let n1 = Number(document.getElementById('num1').value);
+            let n2 = Number(document.getElementById('num2').value);
+            document.getElementById('resultado-soma').innerText = n1 + n2;
+        }
+
+        function comparar() {
+            let n1 = Number(document.getElementById('num1').value);
+            let n2 = Number(document.getElementById('num2').value);
+            let div = document.getElementById('resultado-comparacao');
+            
+            if (n1 > n2) {
+                div.innerText = "Primeiro número é maior";
+                div.style.backgroundColor = "red";
+            } else if (n2 > n1) {
+                div.innerText = "Segundo número é maior";
+                div.style.backgroundColor = "green";
+            } else {
+                div.innerText = "Ambos são iguais";
+                div.style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+</body>
+</html>

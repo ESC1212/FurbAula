@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>P-4</title>
+    <style>
+        ul li:first-child {
+            font-size: 2em;
+        }
+        ul li:last-child {
+            font-size: 0.8em;
+        }
+        
+        .area-hover {
+            padding: 20px;
+            background-color: white;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        .area-hover:hover {
+            background-color: lightblue;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            cursor: pointer;
+        }
+        tr:nth-child(odd) {
+            background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li onclick="alert('Pizza')">Pizza</li>
+        <li onclick="alert('Lasanha')">Lasanha</li>
+        <li onclick="alert('Hambúrguer')">Hambúrguer</li>
+        <li onclick="alert('Sushi')">Sushi</li>
+        <li onclick="alert('Churrasco')">Churrasco</li>
+    </ul>
+
+    <div class="area-hover">
+        <p>Passe o mouse aqui</p>
+    </div>
+
+    <table id="tabela-cores">
+        <script>
+            let tabela = document.getElementById('tabela-cores');
+            for (let i = 0; i < 10; i++) {
+                let linha = tabela.insertRow();
+                for (let j = 0; j < 3; j++) {
+                    let celula = linha.insertCell();
+                    celula.innerText = "Célula";
+                    celula.onclick = function() {
+                        this.style.backgroundColor = "red";
+                    };
+                }
+            }
+        </script>
+    </table>
+</body>
+</html>

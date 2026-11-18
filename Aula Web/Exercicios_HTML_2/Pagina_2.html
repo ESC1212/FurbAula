@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>P-2</title>
+</head>
+<body>
+    <input type="text" id="campo-texto" oninput="espelharTexto()">
+    <button onclick="mostrarTamanho()">Tamanho</button>
+    
+    <div id="espelho"></div>
+    <div id="tamanho"></div>
+
+    <script>
+        function espelharTexto() {
+            document.getElementById('espelho').innerText = document.getElementById('campo-texto').value;
+        }
+
+        function mostrarTamanho() {
+            let tamanhoTexto = document.getElementById('campo-texto').value.length;
+            document.getElementById('tamanho').innerText = "O tamanho atual do campo é de: " + tamanhoTexto;
+        }
+    </script>
+</body>
+</html>
